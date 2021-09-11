@@ -1,0 +1,14 @@
+C:\Users\sadikturan\Desktop\CourseApp\bin\Debug\netcoreapp2.2\CourseApp.deps.json
+C:\Users\sadikturan\Desktop\CourseApp\bin\Debug\netcoreapp2.2\CourseApp.runtimeconfig.json
+C:\Users\sadikturan\Desktop\CourseApp\bin\Debug\netcoreapp2.2\CourseApp.runtimeconfig.dev.json
+C:\Users\sadikturan\Desktop\CourseApp\bin\Debug\netcoreapp2.2\CourseApp.dll
+C:\Users\sadikturan\Desktop\CourseApp\bin\Debug\netcoreapp2.2\CourseApp.pdb
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.csprojAssemblyReference.cache
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.csproj.CoreCompileInputs.cache
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.RazorAssemblyInfo.cache
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.RazorAssemblyInfo.cs
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.AssemblyInfoInputs.cache
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.AssemblyInfo.cs
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.RazorTargetAssemblyInfo.cache
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.dll
+C:\Users\sadikturan\Desktop\CourseApp\obj\Debug\netcoreapp2.2\CourseApp.pdb
