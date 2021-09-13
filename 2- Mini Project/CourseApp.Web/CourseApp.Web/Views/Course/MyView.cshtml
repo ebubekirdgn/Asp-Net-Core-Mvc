@@ -1,0 +1,26 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-center">
+        <h3>
+            @ViewBag.Greeting student, How are you ?
+        </h3>
+        <h4>
+            Hope , you will enjoy the course.
+        </h4>
+        <a asp-action="apply" class="btn btn-primary">Apply the course</a>
+    </div>
+</body>
+</html>
