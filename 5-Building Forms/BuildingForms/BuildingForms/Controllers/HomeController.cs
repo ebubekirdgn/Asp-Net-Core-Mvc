@@ -39,7 +39,7 @@ namespace BuildingForms.Controllers
         {
             if (string.IsNullOrWhiteSpace(q))
                 return View();
-
+            //Index viewinin içerisine bastık direk bu arama sonuclarını
             return View("Index", ProductRepository.Products.Where(a => a.Name.Contains(q)));
         }
     }

@@ -9,6 +9,7 @@
         <tr>
             <th>Name</th>
             <th>Price</th>
+            <th>Description</th>
             <th>is Approved</th>
             <th></th>
         </tr>
@@ -16,27 +17,28 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+            <td>
 
-                    @if (item.isApproved)
-                    {
-                        <span class="badge badge-pill badge-success">Onaylı</span>
-                    }
-                    else
-                    {
-                        <span class="badge badge-pill badge-danger">Onaysız</span>
-                    }
+                @if (item.isApproved)
+                {
+                    <span class="badge badge-pill badge-success">Onaylı</span>
+                }
+                else
+                {
+                    <span class="badge badge-pill badge-danger">Onaysız</span>
+                }
 
-                </td>
-                <td>
-                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">
-                        Update
-                    </a>
-                </td>
-            </tr>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">
+                    Update
+                </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
