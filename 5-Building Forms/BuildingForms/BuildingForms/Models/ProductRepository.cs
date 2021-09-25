@@ -18,7 +18,7 @@ namespace BuildingForms.Models
                 new Product(){ Id=3, Name="Product 3",Description="Description 3",Price=30, isApproved=false },
                 new Product(){ Id=4, Name="Product 4",Description="Description 4",Price=140, isApproved=true },
                 new Product(){ Id=5, Name="Product 5",Description="Description 5",Price=50, isApproved=false },
-                new Product(){ Id=6, Name="Product 6",Description="Description 6",Price=16, isApproved=true }
+                new Product(){ Id=6, Name="Product 6",Description="Description 6",Price=16, isApproved=false }
             };
         }
 
