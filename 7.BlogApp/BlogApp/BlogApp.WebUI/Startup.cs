@@ -40,6 +40,8 @@ namespace BlogApp.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            app.UseStatusCodePages();
             app.UseStaticFiles();
 
             app.UseRouting();
