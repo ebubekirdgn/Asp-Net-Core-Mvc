@@ -1,10 +1,8 @@
-﻿using System;
+﻿using BuildingForms.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using BuildingForms.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BuildingForms.Controllers
 {
@@ -19,7 +17,7 @@ namespace BuildingForms.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.Categories = new SelectList(new List<string>() { "Telefon", "Tablet", "Laptop" });
+            ViewBag.Categories = new SelectList(new List<string>() { "Telefon", "Tablet", "Laptop","PC" });
 
 
             return View();
