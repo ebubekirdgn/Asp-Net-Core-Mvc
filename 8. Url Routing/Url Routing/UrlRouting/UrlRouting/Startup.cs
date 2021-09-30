@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -56,12 +57,22 @@ namespace UrlRouting
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id:int?}");
+                    pattern: "{controller=Home}/{action=Index}/{id:int?}",
+                      constraints: new
+                      {
+                          id = new CompositeRouteConstraint(
+                        new IRouteConstraint[]
+                        {
+                            new AlphaRouteConstraint(),
+                            new MinLengthRouteConstraint(3)
+                        }
+                        
+                      )});
 
                 endpoints.MapControllerRoute(
                     name: "catalog",
                     pattern: "catalog/{controller=Product}/{action=Index}",
-                    constraints: new { id = new IntRouteConstraint()});
+                    constraints: new { id = new IntRouteConstraint() });
             });
         }
     }
