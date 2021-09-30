@@ -49,14 +49,18 @@ namespace UrlRouting
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                 name: "default",
+                 pattern: "a{controller}/{action}");
+
+                endpoints.MapControllerRoute(
                     name: "default", 
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "catalog",
                     pattern: "catalog/{controller=Product}/{action=Index}");
-
             });
         }
     }
 }
+ 
