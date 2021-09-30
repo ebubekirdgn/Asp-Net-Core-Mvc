@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using BlogApp.Data.Concrete.EfCore;
 using Microsoft.EntityFrameworkCore;
+using BlogApp.Data.Abstract;
 
 namespace BlogApp.WebUI
 {
@@ -25,7 +26,9 @@ namespace BlogApp.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BlogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("BlogApp.WebUI")));
+            services.AddTransient<ICategoryRepository, EfCategoryRepository>();
+            services.AddTransient<IBlogRepository, EfBlogRepository>();
+            services.AddDbContext<BlogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("BlogApp.WebUI")));
             services.AddMvc();
         }
 
