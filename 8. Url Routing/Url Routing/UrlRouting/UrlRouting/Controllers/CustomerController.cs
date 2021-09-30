@@ -9,7 +9,7 @@ namespace UrlRouting.Controllers
         {
             return View("MyView", new Result()
             {
-                Controller = "ProductController",
+                Controller = "CustomerController",
                 Action = "Index"
             });
         }
@@ -18,7 +18,7 @@ namespace UrlRouting.Controllers
         {
             return View("MyView", new Result()
             {
-                Controller = "ProductController",
+                Controller = "CustomerController",
                 Action = "List"
             });
         }

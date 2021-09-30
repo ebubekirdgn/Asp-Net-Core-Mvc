@@ -4,7 +4,7 @@ using UrlRouting.Models;
 namespace UrlRouting.Controllers
 {
     public class ProductController : Controller
-    {
+    { 
         public IActionResult Index()
         {
             return View("MyView", new Result()
@@ -22,6 +22,8 @@ namespace UrlRouting.Controllers
                 Action = "List"
             });
         }
+
+
 
         public IActionResult Newest()
         {
