@@ -15,8 +15,9 @@ namespace UrlRouting.Controllers
 
         public IActionResult Index()
         {
-            return View("MyView", new Result() { 
-                Controller ="HomeController",
+            return View("MyView", new Result()
+            {
+                Controller = "HomeController",
                 Action = "Index"
             });
         }

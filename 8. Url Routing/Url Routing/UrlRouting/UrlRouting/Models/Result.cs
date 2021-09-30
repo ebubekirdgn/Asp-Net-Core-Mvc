@@ -8,6 +8,6 @@ namespace UrlRouting.Models
         public string Actio { get; set; }
         public string Action { get; internal set; }
 
-        public Dictionary<string, object> RouteData = new Dictionary<string, object>(); 
+        public Dictionary<string, object> RouteData = new Dictionary<string, object>();
     }
 }

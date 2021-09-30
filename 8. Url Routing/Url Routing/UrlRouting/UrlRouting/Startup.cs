@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -46,7 +47,7 @@ namespace UrlRouting
                 endpoints.MapControllerRoute(
                   name: "shop1",
                   pattern: "shop/{action}",
-                  defaults:new { controller ="Product"}
+                  defaults: new { controller = "Product" }
                   );
 
                 endpoints.MapControllerRoute(
@@ -55,11 +56,12 @@ namespace UrlRouting
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id:int?}");
 
                 endpoints.MapControllerRoute(
                     name: "catalog",
-                    pattern: "catalog/{controller=Product}/{action=Index}");
+                    pattern: "catalog/{controller=Product}/{action=Index}",
+                    constraints: new { id = new IntRouteConstraint()});
             });
         }
     }
