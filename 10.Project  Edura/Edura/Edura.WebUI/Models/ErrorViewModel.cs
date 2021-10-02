@@ -1,5 +1,3 @@
-using System;
-
 namespace Edura.WebUI.Models
 {
     public class ErrorViewModel

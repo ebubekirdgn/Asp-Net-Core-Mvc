@@ -1,6 +1,5 @@
 ﻿using Edura.Entity;
 using Edura.Repository.Abstract;
-using System;
 using System.Linq;
 
 namespace Edura.Repository.Concrete.EntityFramework

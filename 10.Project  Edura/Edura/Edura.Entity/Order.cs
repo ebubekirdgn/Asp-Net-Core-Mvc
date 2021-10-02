@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Edura.Entity
+﻿namespace Edura.Entity
 {
-    class Order
+    internal class Order
     {
     }
 }
