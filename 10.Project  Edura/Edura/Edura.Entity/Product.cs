@@ -12,8 +12,8 @@ namespace Edura.Entity
         public string ProductName{ get; set; }
         public double Price { get; set; }
 
-        //Bire - Cok iliski kurmak icin
-        public int CategoryId { get; set; }
-        public Category Category{ get; set; }
+      
+        // public Category Category{ get; set; }  //Bire - Cok iliski kurmak icin
+        public List<ProductCategory> ProductCategories { get; set; } //Coka Cok yapı kurduk.
     }
 }
