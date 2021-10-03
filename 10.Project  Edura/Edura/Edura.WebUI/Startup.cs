@@ -23,7 +23,7 @@ namespace Edura.WebUI
         {
             services.AddDbContext<EduraContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Edura.WebUI")));
             services.AddTransient<IProductRepository, EfProductRepository>();
-            services.AddMvc();
+            services.AddMvc(); 
             services.AddControllersWithViews();
 
         }
