@@ -15,7 +15,7 @@ namespace Edura.WebUI
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseDefaultServiceProvider(opt => opt.ValidateScopes = false);
+                    webBuilder.UseDefaultServiceProvider(opt => opt.ValidateScopes = false); // Hata vermesini engelledik.
                 });
     }
 }
