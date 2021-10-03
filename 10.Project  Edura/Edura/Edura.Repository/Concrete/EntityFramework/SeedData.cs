@@ -15,7 +15,7 @@ namespace Edura.WebUI.Repository.Concrete.EntityFramework
 
             context.Database.Migrate();
 
-            if (!context.Products.Any()) //yoksa ekle
+            if (context.Products.Count() == 0) //yoksa ekle
             {
                 var products = new[]
                 {
