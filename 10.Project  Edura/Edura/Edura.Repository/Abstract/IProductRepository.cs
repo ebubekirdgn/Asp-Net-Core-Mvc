@@ -1,18 +1,10 @@
 ﻿using Edura.Entity;
-using System;
-using System.Linq;
-using System.Linq.Expressions;
+using System.Collections.Generic;
 
 namespace Edura.Repository.Abstract
 {
-    public interface IProductRepository
+    public interface IProductRepository : IGenericRepository<Product>
     {
-        Product Get(int id);
-        IQueryable<Product> GetAll();
-        IQueryable<Product> Find(Expression<Func<Product, bool>> predicate);
-        void Add(Product entity);
-        void Delete(Product entity);
-        void Edit(Product entity);
-        void Save();
+        List<Product> Gettop5Products();
     }
 }

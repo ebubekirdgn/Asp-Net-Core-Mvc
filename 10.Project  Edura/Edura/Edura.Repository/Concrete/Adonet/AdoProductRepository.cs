@@ -1,4 +1,5 @@
-﻿using Edura.Repository.Abstract;
+﻿using Edura.Entity;
+using Edura.Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,11 @@ namespace Edura.WebUI.Repository.Concrete.Adonet
         }
 
         public List<Product> GetTop5Products()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Product> Gettop5Products()
         {
             throw new NotImplementedException();
         }

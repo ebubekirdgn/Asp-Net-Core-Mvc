@@ -1,6 +1,7 @@
 ﻿using Edura.Entity;
 using Edura.Repository.Abstract;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -31,6 +32,7 @@ namespace Edura.Repository.Concrete.EntityFramework
         {
             _context.Entry<Product>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
+
         public IQueryable<Product> Find(Expression<Func<Product, bool>> predicate)
         {
             return _context.Products.Where(predicate);
@@ -46,6 +48,13 @@ namespace Edura.Repository.Concrete.EntityFramework
             return _context.Products;
         }
 
+        public List<Product> Gettop5Products()
+        {
+            return _context.Products.OrderByDescending(i => i.ProductId)
+                .Take(5)
+                .ToList();
+        }
+         
         public void Save()
         {
             _context.SaveChanges();

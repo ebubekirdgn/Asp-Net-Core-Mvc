@@ -47,17 +47,22 @@ namespace Edura.Repository.Concrete.EntityFramework
             return _context.Products;
         }
 
+        public Category GetByName(string name)
+        {
+            return _context.Categories.Where(i => i.CategoryName == name).FirstOrDefault();
+        }
+
         public void Save()
         {
             _context.SaveChanges();
         }
 
-        Category ICategoryRepository.Get(int id)
+        Category IGenericRepository<Category>.Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        IQueryable<Category> ICategoryRepository.GetAll()
+        IQueryable<Category> IGenericRepository<Category>.GetAll()
         {
             throw new NotImplementedException();
         }
