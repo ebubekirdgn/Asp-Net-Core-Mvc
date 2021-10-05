@@ -1,6 +1,7 @@
 ﻿using Edura.Repository.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Edura.WebUI.Components
 {
@@ -13,7 +14,7 @@ namespace Edura.WebUI.Components
             repository = _repository;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             return View(repository
                 .GetAll()
