@@ -1,38 +1,44 @@
 ﻿using Edura.Entity;
 using Edura.Repository.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Edura.WebUI.Controllers
 {
     public class HomeController : Controller
     {
         private IProductRepository _repository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork _uow;
 
-        public HomeController(IUnitOfWork unitOfWork, IProductRepository repository)
+        public HomeController(IUnitOfWork uow, IProductRepository repository)
         {
             _repository = repository;
-            _unitOfWork = unitOfWork;
+            _uow = uow;
         }
 
         public IActionResult Index()
         {
-            return View(_repository.GetAll());
+            return View(_uow.Products.GetAll().Where(x => x.IsApproved == true && x.IsHome == true).ToList());
         }
 
         public IActionResult Details(int id)
         {
-            return View(_repository.Get(id));
+            return View(_uow.Products.Get(id));
         }
 
-        public IActionResult Create ()
+        public IActionResult Create()
         {
-            var product = new Product() { ProductName="Yeni Ürün" ,Price=1500};
-            _unitOfWork.Products.Add(product);
-            _unitOfWork.SaveChanges();
+            var prd = new Product()
+            {
+                ProductName = "Yeni Ürün",
+                Price = 1000
+            };
+
+            _uow.Products.Add(prd);
+            _uow.SaveChanges();
+            _uow.SaveChanges();
 
             return RedirectToAction("Index");
-
         }
     }
 }

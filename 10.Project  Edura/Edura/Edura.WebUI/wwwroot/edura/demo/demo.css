@@ -1,51 +1,50 @@
 #styleswitcher {
-    z-index: 1000!important;
+    z-index: 1000 !important;
     position: absolute;
 }
 
-#styleswitcher input[type="checkbox"],
-#styleswitcher input[type="radio"] {
-  position: absolute;
-  visibility: hidden;
-}
+    #styleswitcher input[type="checkbox"],
+    #styleswitcher input[type="radio"] {
+        position: absolute;
+        visibility: hidden;
+    }
 
 .settings-btn + label {
-  position: fixed;
-  top: 130px;
-  right: 0;
-  display: block;
-  padding:10px;
-  border-left: 3px solid #666;
-  color: #333;
-  text-align: center;
-  background: #fff;
-  cursor: pointer;
+    position: fixed;
+    top: 130px;
+    right: 0;
+    display: block;
+    padding: 10px;
+    border-left: 3px solid #666;
+    color: #333;
+    text-align: center;
+    background: #fff;
+    cursor: pointer;
 }
 
 .settings-btn:checked + label {
-  right: 200px; /* match width of .buttons-wrapper */
-  transition: all 0.3s;
+    right: 200px; /* match width of .buttons-wrapper */
+    transition: all 0.3s;
 }
 
 .settings-btn:checked ~ .buttons-wrapper {
-  right: 0;
+    right: 0;
 }
 
 .settings-btn:checked ~ .layout-buttons {
-  right: 30px;
+    right: 30px;
 }
 
-
 .buttons-wrapper {
-  position: fixed;
-  top: 130px;
-  right: -200px; /* should match element width */
-  width: 200px;
-  height: 285px;
-  background: #fff;
-  transition: all 0.3s;
-  text-align: center;
-  border-bottom: 3px solid #666;
+    position: fixed;
+    top: 130px;
+    right: -200px; /* should match element width */
+    width: 200px;
+    height: 285px;
+    background: #fff;
+    transition: all 0.3s;
+    text-align: center;
+    border-bottom: 3px solid #666;
 }
 
 .demo-lunar {
@@ -74,12 +73,12 @@
     opacity: 0.8;
 }
 
-.demo-btn:hover {
-    color: #FFF;
-    opacity: 0.9;
-}
+    .demo-btn:hover {
+        color: #FFF;
+        opacity: 0.9;
+    }
 
-.demo-btn:active, .demo-btn:focus {
-    color: #FFF;
-    opacity: 1;
-}
+    .demo-btn:active, .demo-btn:focus {
+        color: #FFF;
+        opacity: 1;
+    }
