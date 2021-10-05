@@ -7,16 +7,16 @@ namespace Edura.WebUI.Components
 {
     public class FeaturedProducts : ViewComponent
     {
-        private IProductRepository repository;
+        private IProductRepository _repository;
 
-        public FeaturedProducts(IProductRepository _repository)
+        public FeaturedProducts(IProductRepository repository)
         {
-            repository = _repository;
+            _repository = repository;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(repository
+            return View(_repository
                 .GetAll()
                 .Where(x => x.IsApproved && x.IsFeatured)
                 .ToList());
