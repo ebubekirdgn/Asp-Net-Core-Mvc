@@ -18,13 +18,14 @@ namespace Edura.WebUI.Repository.Concrete.EntityFramework
             if (context.Products.Count() == 0) //yoksa ekle
             {
                 var products = new[]
-                {
-                    new Product(){ ProductName="Photo Camera", Price=153},
-                    new Product(){ ProductName="Wood Chair", Price=99},
-                    new Product(){ ProductName="Comfortable Sofa"},
-                    new Product(){ ProductName="Hand Bag", Price=125,},
-                    new Product(){ ProductName="Sofa", Price=250},
+                 {
+                    new Product(){ ProductName="Photo Camera", Price=153, Image="product1.jpg",IsHome=true,IsApproved=true,IsFeatured=true},
+                    new Product(){ ProductName="Wood Chair", Price=99, Image="product2.jpg",IsHome=false,IsApproved=true,IsFeatured=true},
+                    new Product(){ ProductName="Comfortable Sofa", Price=526, Image="product3.jpg",IsHome=true,IsApproved=false,IsFeatured=true},
+                    new Product(){ ProductName="Hand Bag", Price=125, Image="product4.jpg",IsHome=true,IsApproved=true,IsFeatured=true},
+                    new Product(){ ProductName="Sofa", Price=250, Image="product3.jpg",IsHome=true,IsApproved=true,IsFeatured=true},
                 };
+
 
                 context.Products.AddRange(products);
 

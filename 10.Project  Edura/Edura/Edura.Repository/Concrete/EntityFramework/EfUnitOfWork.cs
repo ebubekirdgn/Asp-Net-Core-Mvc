@@ -1,6 +1,5 @@
 ﻿using Edura.Repository.Abstract;
 using Edura.Repository.Concrete.EntityFramework;
-using Edura.WebUI.Repository.Abstract;
 using System;
 
 namespace Edura.WebUI.Repository.Concrete.EntityFramework
@@ -18,7 +17,6 @@ namespace Edura.WebUI.Repository.Concrete.EntityFramework
 
         public ICategoryRepository _categories;
 
-        public IOrderRepository _orders;
 
         public IProductRepository Products
         {
@@ -35,14 +33,7 @@ namespace Edura.WebUI.Repository.Concrete.EntityFramework
                 return _categories ?? (_categories = new EfCategoryRepository(_dbContext));
             }
         }
-
-        public IOrderRepository Orders
-        {
-            get
-            {
-                return _orders ?? (_orders = new EfOrderRepository(_dbContext));
-            }
-        }
+       
 
         public void Dispose()
         {
