@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Edura.Repository.Migrations
 {
@@ -28,6 +29,9 @@ namespace Edura.Repository.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HtmlContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateAdded = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsApproved = table.Column<bool>(type: "bit", nullable: false),
                     IsHome = table.Column<bool>(type: "bit", nullable: false),
                     IsFeatured = table.Column<bool>(type: "bit", nullable: false)
@@ -35,6 +39,47 @@ namespace Edura.Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Attributes",
+                columns: table => new
+                {
+                    ProductAttributedId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Attribute = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Attributes", x => x.ProductAttributedId);
+                    table.ForeignKey(
+                        name: "FK_Attributes_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    ImageId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                    table.ForeignKey(
+                        name: "FK_Images_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,6 +107,16 @@ namespace Edura.Repository.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Attributes_ProductId",
+                table: "Attributes",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_ProductId",
+                table: "Images",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProductCategory_CategoryId",
                 table: "ProductCategory",
                 column: "CategoryId");
@@ -69,6 +124,12 @@ namespace Edura.Repository.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Attributes");
+
+            migrationBuilder.DropTable(
+                name: "Images");
+
             migrationBuilder.DropTable(
                 name: "ProductCategory");
 
