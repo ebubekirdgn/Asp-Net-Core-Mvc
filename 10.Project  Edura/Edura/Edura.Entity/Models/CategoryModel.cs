@@ -1,4 +1,4 @@
-﻿namespace Edura.Entity
+﻿namespace Edura.Entity.Models
 {
     public class CategoryModel
     {

@@ -1,4 +1,5 @@
 ﻿using Edura.Entity;
+using Edura.Entity.Models;
 using Edura.Repository.Abstract;
 using Edura.WebUI.Repository.Concrete.EntityFramework;
 using System.Collections.Generic;
