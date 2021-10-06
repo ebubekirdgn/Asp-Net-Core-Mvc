@@ -13,7 +13,6 @@ namespace Edura.WebUI.Components
         {
             _repository = repository;
         }
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
             return View(_repository
