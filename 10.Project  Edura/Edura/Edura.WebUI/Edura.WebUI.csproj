@@ -18,6 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Edura.Entity\Edura.Entity.csproj" />
 		<ProjectReference Include="..\Edura.Repository\Edura.Repository.csproj" />
 	</ItemGroup>
 </Project>

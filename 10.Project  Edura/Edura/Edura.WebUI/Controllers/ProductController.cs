@@ -9,6 +9,7 @@ namespace Edura.WebUI.Controllers
     public class ProductController : Controller
     {
         private IProductRepository _repository;
+        public int PageSize = 2; // Bir sayfada kac tane ürün gözükecek onu belirliyoruz.
 
         public ProductController(IProductRepository repository)
         {
@@ -39,6 +40,33 @@ namespace Edura.WebUI.Controllers
                     Categories = i.ProductCategories.Select(a => a.Category).ToList()
                 })
                 .FirstOrDefault());
+        }
+
+        public IActionResult List(string category, int page = 1)
+        {
+            var products = _repository.GetAll();
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                products = products
+                    .Include(i => i.ProductCategories)
+                    .ThenInclude(i => i.Category)
+                    .Where(i => i.ProductCategories.Any(a => a.Category.CategoryName == category)); //Any true yada false deger gönderir.
+            }
+            var count = products.Count();
+
+            products = products.Skip((page - 1) * PageSize).Take(PageSize); //sayfalama yaptık.
+
+            return View(new ProductListModel()
+            {
+                Products = products,
+                PagingInfo = new PagingInfo()
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = count
+                }
+            });
         }
     }
 }
