@@ -1,4 +1,4 @@
-﻿@model Edura.Entity.Models.ProductDetailsModel
+﻿@Model Edura.Entity.Models.ProductDetailsModel
 
 <section id="content">
 
@@ -33,14 +33,11 @@
             <!-- sidebar end -->
             <!-- main column start -->
             <div class="col-md-9">
-
                 <div class="row">
-
                     <!-- product page top info start -->
                     <div class="col-md-12 product">
                         <div class="row">
                             <div class="col-md-6">
-
                                 <div id="product-gallery" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
 
                                     @foreach (var item in Model.ProductImages)
@@ -53,7 +50,6 @@
                             </div>
 
                             <div class="col-md-6">
-
                                 <div class="padding15">
                                     <h2 class="product-title"><b>@Model.Product.ProductName</b></h2>
                                     <p>
@@ -63,13 +59,10 @@
                                     <p class="product-price">$@Model.Product.Price</p>
                                 </div>
                                 <p>@Model.Product.Description</p>
-
+                                
                                 <div class="padding15">
-                                    @*Cart Controllerine gönderdik*@
                                     <form asp-action="AddToCart" asp-controller="Cart" method="post" class="form-inline">
-                                        @*ProductId yi gönderiyoruz.*@
                                         <input type="hidden" name="ProductId" value="@Model.Product.ProductId" />
-
                                         <div class="form-group qty">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Qty</span>
@@ -79,10 +72,8 @@
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus fa-fw"></i> Add to cart</button>
                                     </form>
                                 </div>
-
                                 <p>
                                     <b>Category:</b>
-
                                     @foreach (var item in Model.Categories)
                                     {
                                         <a href="#">@item.CategoryName</a>
