@@ -27,6 +27,9 @@ namespace Edura.WebUI
             services.AddTransient<IUnitOfWork, EfUnitOfWork>();
             services.AddMvc();
             services.AddControllersWithViews();
+
+            services.AddMemoryCache();  //Session kullanýmý
+            services.AddSession(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +37,7 @@ namespace Edura.WebUI
         {
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession(); //session kullanýmý
 
             app.UseRouting();
 
