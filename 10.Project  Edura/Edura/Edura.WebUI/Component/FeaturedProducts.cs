@@ -15,7 +15,7 @@ namespace Edura.WebUI.Components
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(_repository
+            return  View( _repository 
                 .GetAll()
                 .Where(x => x.IsApproved && x.IsFeatured)
                 .ToList());

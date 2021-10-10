@@ -65,8 +65,9 @@
                                 <p>@Model.Product.Description</p>
 
                                 <div class="padding15">
-
+                                    @*Cart Controllerine gönderdik*@
                                     <form asp-action="AddToCart" asp-controller="Cart" method="post" class="form-inline">
+                                        @*ProductId yi gönderiyoruz.*@
                                         <input type="hidden" name="ProductId" value="@Model.Product.ProductId" />
 
                                         <div class="form-group qty">
