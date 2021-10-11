@@ -58,7 +58,12 @@
                 </div>
 
                 <div class="text-right">
-                    <a href="#" class="btn btn-default"><i class="fa fa-refresh fa-fw"></i> Update Cart</a>
+                    <form asp-action="RemoveFromCart" asp-controller="Cart" method="post">
+                        <button type="submit" class="btn btn-d btn-success">
+                            Update Cart
+                            <i class="fa fa-times fa-fw"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <!-- cart contents end -->
